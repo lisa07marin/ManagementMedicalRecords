@@ -1,5 +1,5 @@
 import React from "react";
-import { ListGroup, ListGroupItem } from "reactstrap";
+import { Card, Button } from "react-bootstrap";
 
 const Patients = () => {
     const pacientes = [
@@ -10,11 +10,14 @@ const Patients = () => {
         { fullname: "ANASTASIA" }
     ]
     return (
-        <ListGroup flush>
+        <React.Fragment>
+            <div className="buttons">
+                <Button variant="secondary" href="/pacientes/nuevo">Agregar paciente</Button>
+            </div>
             {pacientes.map(p => (
-                <ListGroupItem><i className="far fa-user" />  {p.fullname}</ListGroupItem>
+                <Card><Card.Body><i className="far fa-user" />  {p.fullname}</Card.Body></Card>
             ))}
-        </ListGroup>
+        </React.Fragment>
     )
 }
 
