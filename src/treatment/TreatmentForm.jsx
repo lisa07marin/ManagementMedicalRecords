@@ -1,29 +1,37 @@
 import React from "react";
-import { Button, Form, Input, InputGroup, Label } from "reactstrap";
+import { Button, Col, Form, Input, Label, Row, FormGroup } from "reactstrap";
+import Datetime from "react-datetime";
 
 const TreatmentForm = () => {
 
     return (
-        <Form>
-            <InputGroup style={{ margin: "10px" }}>
-                <Label for="" style={{ marginRight: "10px" }}>Paciente:</Label>
-                <Input type="text" />
-            </InputGroup>
-            <h5>TRATAMIENTO</h5>
-            <InputGroup style={{ margin: "10px" }}>
-                <Label for="" style={{ marginRight: "10px" }}>Fecha:</Label>
-                <Input type="text" />
-            </InputGroup>
-            <InputGroup style={{ margin: "10px" }}>
-                <Label for="" style={{ marginRight: "10px" }}>Tratamiento:</Label>
-                <Input type="textarea" />
-            </InputGroup>
-            <InputGroup style={{ margin: "10px" }}>
-                <Label for="" style={{ marginRight: "10px" }}>Importe:</Label>
-                <Input type="textarea" />
-            </InputGroup>
-            <Button>Agregar tratamiento</Button>
-        </Form>
+        <React.Fragment>
+            <Form>
+                <Row>
+                    <Col sm="3">
+                        <FormGroup style={{ margin: "10px" }}>
+                            <Label for="" style={{ marginRight: "10px" }}>Fecha:</Label>
+                            <Datetime />
+                        </FormGroup>
+                    </Col>
+                    <Col>
+                        <FormGroup style={{ margin: "10px" }}>
+                            <Label for="" style={{ marginRight: "10px" }}>Tratamiento:</Label>
+                            <Input type="textarea" />
+                        </FormGroup>
+                    </Col>
+                    <Col sm="2">
+                        <FormGroup style={{ margin: "10px" }}>
+                            <Label for="" style={{ marginRight: "10px" }}>Importe:</Label>
+                            <Input type="number" />
+                        </FormGroup>
+                    </Col>
+                </Row>
+            </Form>
+            <div className="buttons">
+                <Button>Guardar</Button>
+            </div>
+        </React.Fragment>
     )
 }
 
